@@ -3,9 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <title>SeeHowThey.Run</title>
+  <script src="https://cdn.plot.ly/plotly-3.4.0.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-Coming soon
+<div id="titleBar" style="text-align: center;"><span class="title">S<span class="titleLowerCase">EE</span>H<span class="titleLowerCase">OW</span>T<span class="titleLowerCase">HEY</span>.R<span class="titleLowerCase">UN</span></div>
+<div id="titleBar" style="text-align: center;"><span class="subtitle">see the affect of agenda suite on accesses required for runner win</span></div>
+<div class="container">
 
+  <!-- SECTION: Format Settings -->
+  <div class="section">
+    <button class="section-toggle">Settings</button>
+    <div class="section-content" style="display: none;">
+     <div class="controls">
+        <div class="center-wrap" style="width: fit-content;margin: 0 auto">
+          <button id="toggle6PtrsBtn" class="toggle active">6 Ptrs</button>
+          <button id="toggle4PtrsBtn" class="toggle active">4 Ptrs</button>
+          <button id="toggleGFIBtn" class="toggle active">GFI</button>
+          <button id="toggleLTDBtn" class="toggle active">LTD</button>
+          <button id="toggle0PtrsBtn" class="toggle active">0 Ptrs</button>
+          <button id="toggleNegPtrsBtn" class="toggle active">-1 Trap</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SECTION: Table -->
+  <div class="section">
+    <button class="section-toggle active">Deck Information</button>
+    <div class="section-content">
+      <div class="center-wrap" style="width: fit-content;margin: 0 auto">
+        <table id="deckTable">
+          <thead>
+            <tr>
+              <th rowspan="2" class="col-deckname" style="text-align: right;">Name&nbsp;&nbsp;&nbsp;</th>
+              <th rowspan="2" class="col-numinput">Deck Size</th>
+              <th rowspan="2" class="col-6 col-numinput">6 Ptrs</th>
+              <th rowspan="2" class="col-4 col-numinput">4 Ptrs</th>
+              <th colspan="2" class="col-3 col-numinput">3 Ptrs</th>
+              <th colspan="2" class="col-2 col-numinput">2 Ptrs</th>
+              <th rowspan="2" class="col-numinput">1 Ptrs</th>
+              <th rowspan="2" class="col-0 col-numinput">0 Ptrs</th>
+              <th rowspan="2" class="col-Neg col-numinput">-1 Trap</th>
+              <th rowspan="2" class="col-numoutput">Total Pts</th>
+              <th rowspan="2" class="col-numoutput">% of<br>Deck</th>
+              <th colspan="2" class="">Win Access#</th>
+              <th rowspan="2" class="">More<br>Charts?</th>
+            </tr>
+            <tr>
+              <th rowspan="2" class="col-3Std col-numinput">Std</th>
+              <th rowspan="2" class="col-3GFI col-numinput">GFI</th>
+              <th rowspan="2" class="col-2Std col-numinput">Std</th>
+              <th rowspan="2" class="col-2LTD col-numinput">LTD</th>
+              <th rowspan="2" class="col-WinAvg col-numoutput">Avg</th>
+              <th rowspan="2" class="col-WinMed col-numoutput">Median</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+        <button id="addRowBtn" class="primary">Add Deck</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Charts -->
+  <div class="section">
+    <button class="section-toggle active">Summary Charts</button>
+    <div class="section-content" style="justify-content: center;display: flex;">
+      <div id="visualSummary" class="sidebyside" style="justify-content: center;display: flex;">
+      <div class="box" id="chartSummaryViolin" style="width:400px;height:400px;"></div> 
+       <div class="box" id="chartSummaryWinVsAccess" style="width:500px;height:400px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Charts -->
+  <div class="section">
+    <button class="section-toggle active">More Charts</button>
+    <div class="section-content">
+      <div id="visualDetails" class="sidebyside" style="justify-content: center;display: flex;">
+        <div id="chartHaveWonPrimary" class="box" style="width:500px;height:350px;"></div>  
+        <div id="chartHaveWonSecondary" class="box" style="width:500px;height:350px;"></div>       
+        <div style="flex-basis: 100%;height:1px"></div> <!-- forces new line -->
+        <div id="chartReachWinPrimary" class="box" style="width:500px;height:350px;"></div>  
+        <div id="chartReachWinSecondary" class="box" style="width:500px;height:350px;"></div>       
+        <div style="flex-basis: 100%;height:1px"></div> <!-- forces new line -->
+        <div id="chartDivePrimary" class="box" style="width:500px;height:350px;"></div>  
+        <div id="chartDiveSecondary" class="box" style="width:500px;height:350px;"></div>       
+        <div style="flex-basis: 100%;height:1px"></div> <!-- forces new line -->
+        <div id="noMoreChartsSelectedWarning">Select a deck to view</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

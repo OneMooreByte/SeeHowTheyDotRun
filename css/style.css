@@ -1,0 +1,258 @@
+/* ---------------------------------
+   BASE
+--------------------------------- */
+* {
+  box-sizing: border-box;
+  /*font-family: "Courier New", Consolas, monospace;*/
+    font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+  padding-top: 5px;
+  background: #0a0f0c;
+  color: #9fe6b8; /* resaturated green */
+}
+
+/* ---------------------------------
+   CONTAINER
+--------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #0e1411;
+  border: 1px solid #2e5a44;
+}
+
+/* ---------------------------------
+   Title bar
+--------------------------------- */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.titleLowerCase {
+  font-size: 20px;
+  color: #b7f5cf;
+}
+.subtitle {
+  font-size: 14px;
+  color: #3a3a3a;
+}
+/* ---------------------------------
+   HEADINGS
+--------------------------------- */
+h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #b7f5cf;
+  letter-spacing: 0.06em;
+}
+
+/* ---------------------------------
+   BUTTONS
+--------------------------------- */
+button {
+  font-size: 13px;
+  padding: 6px 12px;
+  background: #0e1411;
+  color: #9fe6b8;
+  border: 1px solid #2e5a44;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16201a;
+}
+
+button.primary {
+  border-color: #56a87e;
+}
+
+button.toggle.active {
+  background: #1c2a22;
+}
+
+button.delete {
+  color: #e39a9a;
+  border-color: #7a3c3c;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------
+   TABLE
+--------------------------------- */
+table {
+  table-layout: fixed;  
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  background: #0e1411;
+}
+
+/* HEADERS */
+thead th {
+  background: #111a16;
+  color: #b7f5cf;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 1px;
+  border: 1px solid #2e5a44;
+}
+
+th.col-numinput {
+  min-width: 36px;
+width: 36px;
+}
+
+th.col-numoutput {
+  min-width: 52px;
+width: 52px;
+}
+
+th.col-deckname {
+  max-width: 200px;
+width: 200px;
+}
+
+
+/* CELLS */
+th,
+td {
+  border: 1px solid #243c30;
+  padding: 0;
+  text-align: center;
+}
+
+td.invalid {
+    color: red;
+}
+
+td.outputCol {
+  background: #121c17;
+}
+
+/* ---------------------------------
+   INPUTS
+--------------------------------- */
+td input[type="number"],
+td input[type="text"] {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: #9fe6b8;
+  font-size: 14px;
+}
+
+td input[type="text"] {
+  text-align: right;
+}
+
+td input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  border: 2px solid #888;
+  background-color: #222;   /* unchecked color */
+  cursor: pointer;
+}
+
+td input[type="checkbox"]:checked {
+  background-color: #222;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #9fe6b8;
+  font-size: 12px;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+}
+
+td input::placeholder {
+  color: #5f8a73;
+}
+
+td input:focus {
+  outline: none;
+  background: #16201a;
+}
+
+td.delete{
+ width: 0px;
+}
+
+/* ---------------------------------
+   ROW INTERACTION
+--------------------------------- */
+tbody tr:hover td {
+  background: #141f19;
+}
+
+/* ---------------------------------
+   EXPANDABLE SECTIONS
+--------------------------------- */
+.section {
+  border: 1px solid #2e5a44;
+  margin-bottom: 12px;
+}
+
+.section-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  background: #0e1411;
+  color: #9fe6b8;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.section-toggle.active {
+  background: #16201a;
+}
+
+.section-content {
+  padding: 10px;
+  background: #0e1411;
+}
+
+/* ---------------------------------
+   UTILITY
+--------------------------------- */
+.hidden {
+  display: none;
+}
+
+/* ---------------------------------
+ REMOVE INPUT ARROWS
+--------------------------------- */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sidebyside {
+    display: flex;        /* put children in a row */
+  gap: 0%;              /* optional spacing between boxes */
+  flex-wrap: wrap;      /* allows wrapping on small screens */
+}
